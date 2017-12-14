@@ -8,17 +8,18 @@
             <div class="well">
                 <h2 class="text-center">Your Profile</h2>
                 <% if current_user.profile %>
-                    <%= link_to "Edit Your Profile", "#", class: "btn btn-primary btn-lg btn-block" %>
+                    <%= link_to "Edit Your Profile", edit_user_profile_path(current_user), class: "btn btn-primary btn-lg btn-block" %>
                     <%= link_to "View Your Profile", user_path(current_user), class: "btn btn-primary btn-lg btn-block" %>
                 <% else %>
-                    <%= link_to "Create your profile!", new_user_profile_path(current_user), class: "btn btn-primary btn-lg btn-block" %>
+                    <p class="text-center">Create your profile to share with the community.</p>
+                    <%= link_to "Create your profile", new_user_profile_path(current_user), class: "btn btn-primary btn-lg btn-block" %>
                 <% end %>
             </div>
         </div>
         <div class="col-md-6">
             <div class="well">
                <h2 class="text-center">The Community</h2>
-               <p class="text-center">Visit the community to meet other developers and entrepreneurs!</p>
+               <p class="text-center">Visit the community to meet other developers and entrepreneurs like you!</p>
                <%= link_to "Visit The Community", "#", class: "btn btn-primary btn-lg btn-block" %>
             </div>
         </div>
@@ -31,8 +32,6 @@
                 <%= link_to "Sign up with Basic", new_user_registration_path(plan: @basic_plan.id), class: "btn btn-primary btn-lg btn-block" %>
             </div>
         </div>
-    </div>
-    <div class="">
         <div class="col-md-6">
             <div class="well">
                 <h2 class="text-center">Pro Membership</h2>
@@ -43,4 +42,3 @@
     <% end %>
 </div>
     
-</div>
